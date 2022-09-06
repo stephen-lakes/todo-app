@@ -2,11 +2,10 @@ import { useState } from 'react';
 import * as Font from 'expo-font';
 
 import { StatusBar } from 'expo-status-bar';
-import { Keyboard, Platform, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
-import { KeyboardAvoidingView } from 'react-native';
+import { Keyboard, KeyboardAvoidingView, Platform, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
 
 import Task from './components/Task';
-import { globalStyles } from './styles/Global';
+import { globalStyles } from './styles/global';
 
 const getFonts = () => {
   return Font.loadAsync({
