@@ -2,10 +2,11 @@ import { useState } from 'react';
 import * as Font from 'expo-font';
 
 import { StatusBar } from 'expo-status-bar';
-import { Keyboard, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
+import { Keyboard, Platform, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
 import { KeyboardAvoidingView } from 'react-native';
 
 import Task from './components/Task';
+import { globalStyles } from './styles/Global';
 
 const getFonts = () => {
   return Font.loadAsync({
@@ -35,11 +36,11 @@ export default function App() {
   }
 
   return (
-    <View style={styles.container}>
+    <View style={globalStyles.container}>
     
     {/* Today's taks */}
     <View style={styles.taskswrapper}>
-      <Text style={styles.sectionTitle}>Today's tasks</Text>
+      <Text style={globalStyles.sectionTitle}>Today's tasks</Text>
       <View style={styles.items}>
         {/* This is where the tasks will go */}
         {
@@ -57,7 +58,7 @@ export default function App() {
 
     {/* Write a task */}
     <KeyboardAvoidingView
-      // behaviour={Platform.OS === "ios" ? "padding" : "height"}
+      behaviour={Platform.OS === "ios" ? "padding" : "height"}
       style={styles.writeTaskWrapper}
       >
         <TextInput style={styles.input} value={task} placeholder={"Write a task"} onChangeText={text => setTask(text)} />
@@ -76,18 +77,9 @@ export default function App() {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#EBEAED',
-    fontFamily: 'sora-regular',
-  },
   taskswrapper: {
     paddingTop: 80,
     paddingHorizontal: 20,
-  },
-  sectionTitle: {
-    fontSize: 24,
-    fontFamily: 'sora-bold',
   },
   items: {
     marginTop: 30,
