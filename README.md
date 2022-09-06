@@ -8,7 +8,7 @@ todo-app is a todo list application coded in React Native. It uses React useSate
 The application is made for users who want increase their productivity.
 
 ## Screenshots
-![picture alt](pic1.png "Products Home page") ![picture alt](pic2.png "Products Home page")
+![picture alt](public/pic1.png "Products Home page") ![picture alt](public/pic2.png "Products Home page")
 
 ## How to install and run this project
 1. clone the repo
