@@ -1,10 +1,20 @@
 import { useState } from 'react';
+import * as Font from 'expo-font';
 
 import { StatusBar } from 'expo-status-bar';
 import { Keyboard, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
 import { KeyboardAvoidingView } from 'react-native';
 
 import Task from './components/Task';
+
+const getFonts = () => {
+  return Font.loadAsync({
+    'sora-regular': require('./assets/Fonts/Sora-Regular.ttf'),
+    'sora-bold': require('./assets/Fonts/Sora-Bold.ttf'),
+  })
+}
+
+getFonts();
 
 export default function App() {
   const [task, setTask] = useState();
@@ -69,6 +79,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#EBEAED',
+    fontFamily: 'sora-regular',
   },
   taskswrapper: {
     paddingTop: 80,
@@ -76,7 +87,7 @@ const styles = StyleSheet.create({
   },
   sectionTitle: {
     fontSize: 24,
-    fontWeight: 'bold'
+    fontFamily: 'sora-bold',
   },
   items: {
     marginTop: 30,
