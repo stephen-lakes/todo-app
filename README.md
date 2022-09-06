@@ -12,6 +12,5 @@ The application is made for users who want increase their productivity.
 
 ## How to install and run this project
 1. clone the repo
-2. create virtual environment 
-3. run `pip install requirements.txt`
-4. run `python manage.py runserver` to start the development server
+2. run `npm install expo-cli`
+3. run `expo-start` to start the development server
